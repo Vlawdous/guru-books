@@ -49,10 +49,12 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "php ./vendor/bin/cghooks add --git-dir=./.git"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "php ./vendor/bin/cghooks update --git-dir=./.git"
         ]
     },
     "conflict": {
@@ -64,8 +66,12 @@
             "require": "7.1.*"
         },
         "hooks": {
+            "config": {
+                "stop-on-failure": ["pre-commit"]
+            },
             "pre-commit": [
-                "php-cs-fixer fix --diff --dry-run"
+                "./bin/phpstan analyse",
+                "./vendor/bin/php-cs-fixer fix src --diff --dry-run"
             ]
         }
     },
