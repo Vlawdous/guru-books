@@ -70,7 +70,7 @@
                 "stop-on-failure": ["pre-commit"]
             },
             "pre-commit": [
-                "./bin/phpstan analyse",
+                "./vendor/bin/phpstan analyse",
                 "./vendor/bin/php-cs-fixer fix src --diff --dry-run"
             ]
         }
