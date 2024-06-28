@@ -17,3 +17,7 @@
 .idea
 .vscode
 ###< IDE's ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###

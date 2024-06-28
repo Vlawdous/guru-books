@@ -65,6 +65,7 @@
         }
     },
     "require-dev": {
+        "phpstan/phpstan": "^1.11",
         "spiral/roadrunner-cli": "^2.6"
     }
 }
