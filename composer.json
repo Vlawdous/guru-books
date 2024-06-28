@@ -62,9 +62,15 @@
         "symfony": {
             "allow-contrib": false,
             "require": "7.1.*"
+        },
+        "hooks": {
+            "pre-commit": [
+                "php-cs-fixer fix --diff --dry-run"
+            ]
         }
     },
     "require-dev": {
+        "brainmaestro/composer-git-hooks": "^3.0",
         "friendsofphp/php-cs-fixer": "^3.59",
         "phpstan/phpstan": "^1.11",
         "spiral/roadrunner-cli": "^2.6"
