@@ -1,0 +1,11 @@
+version: '4'
+
+services:
+  roadrunner:
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/usr/src/app
+    build:
+      dockerfile: ./docker/php/RoadRunner.Dockerfile
+    command: 'rr serve -c .rr.dev.yaml'
